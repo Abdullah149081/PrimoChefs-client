@@ -12,5 +12,8 @@
   @apply py-5 px-7 border-0 text-white bg-gradient-to-r from-blue-600 to-sky-500 hover:from-sky-500 hover:to-indigo-500 rounded-lg;
 }
 .text-g {
-  @apply bg-gradient-to-r from-indigo-500 to-violet-500 text-transparent  bg-clip-text;
+  @apply bg-gradient-to-r from-sky-500 to-violet-500 text-transparent  bg-clip-text;
+}
+.text-details {
+  @apply font-semibold text-lg text-gray-700;
 }
