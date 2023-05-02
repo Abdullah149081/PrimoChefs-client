@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 .active {
-  @apply font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-purple-500 text-2xl to-pink-600;
+  @apply font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-blue-600 text-2xl to-sky-500;
 }
 .default {
-  @apply font-bold text-lg text-transparent  bg-clip-text bg-gradient-to-r from-indigo-500 to-violet-500;
+  @apply font-bold text-lg text-transparent  bg-clip-text bg-gradient-to-r from-sky-600 to-indigo-500;
 }
 .btn {
-  @apply py-5 px-7 text-white bg-gradient-to-r from-indigo-500 to-violet-500 hover:from-violet-500 hover:to-indigo-500 rounded-lg;
+  @apply py-5 px-7 border-0 text-white bg-gradient-to-r from-blue-600 to-sky-500 hover:from-sky-500 hover:to-indigo-500 rounded-lg;
 }
 .text-g {
   @apply bg-gradient-to-r from-indigo-500 to-violet-500 text-transparent  bg-clip-text;
