@@ -15,7 +15,7 @@ const ChefSection = ({ chefs }) => {
           <p className="text-details">
             Years of experience: <span>{years_of_experience}</span>
           </p>
-          <p className="text-details ">
+          <p className="text-details text-lg ">
             Numbers of recipes: <span>{num_of_recipes}</span>
           </p>
           <p className="text-details text-g">likes: {likes}</p>

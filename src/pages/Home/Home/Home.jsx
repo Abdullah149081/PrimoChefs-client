@@ -30,7 +30,9 @@ const Home = () => {
       </div>
 
       {/* chef  */}
-      <h2 className="text-center text-[#255946] text-3xl lg:text-5xl font-bold">Our Master Chef</h2>
+      <h2 className="chef-title">
+        Our <span>Master Chef</span>
+      </h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 mt-12 gap-4">
         {chefsData?.map((chefs) => (
           <ChefSection key={chefs.id} chefs={chefs} />
