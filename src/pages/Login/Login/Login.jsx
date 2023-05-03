@@ -9,7 +9,7 @@ import { AuthContext } from "../../../provider/AuthProviders";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
-  const { signIn, googleSign, updateUserData } = useContext(AuthContext);
+  const { signIn, googleSign } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";

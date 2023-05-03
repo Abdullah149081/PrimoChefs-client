@@ -18,12 +18,13 @@ const AuthProviders = ({ children }) => {
 
   // sign-in user
   const signIn = (email, password) => {
-    setLoading(true);
+    // setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   // logOut user
   const logOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
 

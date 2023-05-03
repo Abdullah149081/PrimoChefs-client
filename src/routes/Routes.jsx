@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login/Login";
 import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 import ViewRecipes from "../pages/Shared/ViewRecipes/ViewRecipes";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/view-Recipes/:id",
-        element: <ViewRecipes />,
+        element: (
+          <PrivateRoutes>
+            <ViewRecipes />
+          </PrivateRoutes>
+        ),
         loader: ({ params }) => fetch(`http://localhost:5000/chefAllData/${params.id}`),
       },
       {
