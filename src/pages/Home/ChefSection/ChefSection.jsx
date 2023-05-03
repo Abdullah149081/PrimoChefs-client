@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ChefSection = ({ chefs }) => {
-  console.log(chefs);
   const { id, chef_picture, chef_name, years_of_experience, num_of_recipes, likes } = chefs;
   return (
     <div>
@@ -20,7 +19,7 @@ const ChefSection = ({ chefs }) => {
           </p>
           <p className="text-details text-g">likes: {likes}</p>
           <div className="card-actions">
-            <Link to="/">
+            <Link to={`/view-Recipes/${id}`}>
               <button type="button" className="btn btn-primary">
                 View Recipes
               </button>

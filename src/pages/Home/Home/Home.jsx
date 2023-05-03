@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import { useLoaderData } from "react-router-dom";
-import banner from "../../../assets/banner.jpg";
+import banner1 from "../../../assets/banner-1.jpg";
 import chef from "../../../assets/chef.json";
 import ChefSection from "../ChefSection/ChefSection";
 
@@ -9,9 +9,9 @@ const Home = () => {
   // console.log(chefData);
 
   return (
-    <div className="px-4 py-16 md:px-24 lg:px-28 lg:py-20 ">
+    <div className="px-4 py-16 md:px-24 lg:px-32 lg:py-20 ">
       {/* banner  */}
-      <img className="absolute hidden lg:block -z-0 -top-52 right-0 w-full" src={banner} alt="" />
+      <img className="absolute hidden lg:block -z-0 top-0 right-0 w-full" src={banner1} alt="" />
       <div className="flex relative z-0  flex-col md:flex-row items-center justify-between  ">
         <div className="lg:w-1/2 space-y-8 ">
           <h1 className="text-4xl md:text-7xl font-bold lg:leading-tight ">
@@ -30,7 +30,7 @@ const Home = () => {
       </div>
 
       {/* chef  */}
-      <h2 className="chef-title">
+      <h2 className="chef-title relative z-10">
         Our <span>Master Chef</span>
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 mt-12 gap-4">

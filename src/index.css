@@ -17,11 +17,14 @@
 .btn {
   @apply py-5 px-7 font-semibold border-0 text-white bg-amber-500 hover:bg-emerald-900 hover:duration-150 hover:transition rounded-lg;
 }
+.fa {
+  @apply p-3 rounded-full;
+}
 .text-g {
   @apply bg-gradient-to-r from-green-700 via-yellow-500 to-black text-transparent  bg-clip-text;
 }
 .text-details {
-  @apply text-lg font-extrabold    text-emerald-900;
+  @apply text-lg font-extrabold text-emerald-900;
 }
 
 .chef-title {

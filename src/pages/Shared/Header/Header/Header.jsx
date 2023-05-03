@@ -10,7 +10,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:sticky top-0 z-10 lg:mt-5">
+    <div className="md:sticky top-0 z-20 lg:mt-5">
       <nav className="lg:px-32 h-20 flex justify-between items-center pl-4 bg-white ">
         <div>
           <Link to="/">
@@ -40,6 +40,8 @@ const Header = () => {
           >
             <ActiveLink to="/">Home</ActiveLink>
             <ActiveLink to="/blog">Blog</ActiveLink>
+            <ActiveLink to="/login">Sign in</ActiveLink>
+            <ActiveLink to="/register">Sign up</ActiveLink>
             <button type="button" className="btn  mx-auto w-2/4 block  lg:hidden ">
               login
             </button>
