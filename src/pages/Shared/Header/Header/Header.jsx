@@ -1,13 +1,19 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from "react";
-import { FaAlignRight } from "react-icons/fa";
-
+import React, { useContext, useState } from "react";
+import { FaAlignRight, FaUserSlash } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
 import { TiTimesOutline } from "react-icons/ti";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../../provider/AuthProviders";
 import ActiveLink from "../ActiveLink/ActiveLink";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handlerLogOut = () => {
+    logOut();
+  };
 
   return (
     <div className="md:sticky top-0 z-20 lg:mt-5">
@@ -19,7 +25,6 @@ const Header = () => {
             </h2>
           </Link>
         </div>
-
         <div>
           <div
             onClick={() => {
@@ -40,17 +45,25 @@ const Header = () => {
           >
             <ActiveLink to="/">Home</ActiveLink>
             <ActiveLink to="/blog">Blog</ActiveLink>
-            <ActiveLink to="/login">Sign in</ActiveLink>
-            <ActiveLink to="/register">Sign up</ActiveLink>
+            {!user && <ActiveLink to="/login">Sign in</ActiveLink>}
+            {!user && <ActiveLink to="/register">Sign up</ActiveLink>}
             <button type="button" className="btn  mx-auto w-2/4 block  lg:hidden ">
               login
             </button>
           </div>
         </div>
         <div className="hidden lg:block">
-          <button type="button" className="btn font-bold hidden lg:block">
-            login
-          </button>
+          {user ? (
+            <button onClick={handlerLogOut} type="button" className="btn font-bold hidden lg:block">
+              <span className="inline-flex gap-2 ">
+                logout <FiLogOut className="w-4 h-4" />
+              </span>
+            </button>
+          ) : (
+            <div className="bg-amber-500 rounded-full p-2">
+              <FaUserSlash className="w-7 h-7 rounded-full" />
+            </div>
+          )}
         </div>
       </nav>
     </div>
