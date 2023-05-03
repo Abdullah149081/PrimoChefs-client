@@ -52,18 +52,27 @@ const Header = () => {
             </button>
           </div>
         </div>
-        <div className="hidden lg:block">
-          {user ? (
-            <button onClick={handlerLogOut} type="button" className="btn font-bold hidden lg:block">
-              <span className="inline-flex gap-2 ">
-                logout <FiLogOut className="w-4 h-4" />
-              </span>
-            </button>
-          ) : (
-            <div className="bg-amber-500 rounded-full p-2">
-              <FaUserSlash className="w-7 h-7 rounded-full" />
+        <div className="hidden lg:inline-block">
+          <div className="flex items-center gap-4">
+            {user && (
+              <p title={user?.displayName}>
+                <img className="w-10 h-10 rounded-full ring-offset-2 ring-2 ring-emerald-800" src={user?.photoURL} alt="" />
+              </p>
+            )}
+            <div>
+              {user ? (
+                <button onClick={handlerLogOut} type="button" className="btn font-bold ">
+                  <span className="inline-flex gap-2 ">
+                    logout <FiLogOut className="w-4 h-4" />
+                  </span>
+                </button>
+              ) : (
+                <div className="bg-amber-500 rounded-full p-2">
+                  <FaUserSlash className="w-7 h-7 rounded-full" />
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
       </nav>
     </div>
