@@ -1,4 +1,5 @@
 import Lottie from "lottie-react";
+import { BiPhoneCall } from "react-icons/bi";
 import { useLoaderData } from "react-router-dom";
 import banner1 from "../../../assets/banner-1.jpg";
 import chef from "../../../assets/chef.json";
@@ -18,8 +19,8 @@ const Home = () => {
             BEST FOOD FOR <span className="text-g ">YOUR TASTE</span>
           </h1>
           <p className="text-gray-600 lg:text-2xl">Experience the artistry of our culinary masters and savor every bite of our exquisite dishes!</p>
-          <button type="button" className="btn font-bold">
-            Get Started
+          <button type="button" className="btn  font-bold flex gap-2 items-center">
+            <span>contact us</span> <BiPhoneCall className="w-5 h-5" />
           </button>
         </div>
         <div className="lg:w-1/2 ">

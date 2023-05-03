@@ -6,7 +6,7 @@ import { AuthContext } from "../../../provider/AuthProviders";
 
 const Register = () => {
   const [error, setError] = useState("");
-  const { createUser, googleSign, updateUserData } = useContext(AuthContext);
+  const { createUser, googleSign, updateUserData, logOut, githubSing } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handlerSignUp = (e) => {
@@ -27,7 +27,8 @@ const Register = () => {
         const newUser = result.user;
         form.reset();
         updateUserData(newUser, name, photo);
-        navigate("/");
+        logOut();
+        navigate("/sign-in");
       })
       .catch((err) => {
         setError(err?.message);
@@ -43,6 +44,16 @@ const Register = () => {
         setError(err?.message);
       });
   };
+  const handlerGithubLogin = () => {
+    githubSing()
+      .then(() => {
+        navigate("/");
+      })
+      .catch((err) => {
+        setError(err?.message);
+      });
+  };
+
   return (
     <div className="hero  mt-3 ">
       <div className="hero-content  flex-col w-full  lg:w-5/6 ">
@@ -91,7 +102,7 @@ const Register = () => {
               </button>
             </div>
             <div className="form-control mt-2">
-              <button onClick={handlerGoogleLogin} type="button" className="btn google-btn space-x-2">
+              <button onClick={handlerGithubLogin} type="button" className="btn google-btn space-x-2">
                 <FaGithub className="w-7 h-5" />
                 <span>Continue with Github</span>
               </button>

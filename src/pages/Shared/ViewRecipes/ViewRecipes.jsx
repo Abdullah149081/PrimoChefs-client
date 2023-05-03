@@ -1,4 +1,5 @@
 import React from "react";
+import { BiLike } from "react-icons/bi";
 import { useLoaderData } from "react-router-dom";
 import Recipes from "./Recipes";
 
@@ -14,7 +15,9 @@ const ViewRecipes = () => {
         <div className="card-body space-y-2 mt-4 lg:w-2/5">
           <h2 className="card-title text-zinc-600 ">{chef_name}</h2>
           <p className="text-lg font-medium text-zinc-500">Biography: {bio}</p>
-          <p className="text-details ">likes: {likes}</p>
+          <p className="text-details text-g inline-flex gap-2 items-center">
+            <BiLike /> <span>{likes}</span>
+          </p>
           <p className="text-details text-lg ">
             Numbers of recipes: <span>{num_of_recipes}</span>
           </p>

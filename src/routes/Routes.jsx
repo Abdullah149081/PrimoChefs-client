@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/chefAllData"),
+        loader: () => fetch("https://primo-chefs-server-abdullah149081.vercel.app/chefAllData"),
       },
       {
         path: "/view-Recipes/:id",
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
             <ViewRecipes />
           </PrivateRoutes>
         ),
-        loader: ({ params }) => fetch(`http://localhost:5000/chefAllData/${params.id}`),
+        loader: ({ params }) => fetch(`https://primo-chefs-server-abdullah149081.vercel.app/chefAllData/${params.id}`),
       },
       {
         path: "/sign-in",

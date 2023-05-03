@@ -9,7 +9,7 @@ import { AuthContext } from "../../../provider/AuthProviders";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
-  const { signIn, googleSign } = useContext(AuthContext);
+  const { signIn, googleSign, githubSing } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
@@ -30,6 +30,13 @@ const Login = () => {
   };
   const handlerGoogleLogin = () => {
     googleSign()
+      .then(() => {
+        navigate(from, { replace: true });
+      })
+      .catch(() => {});
+  };
+  const handlerGithubLogin = () => {
+    githubSing()
       .then(() => {
         navigate(from, { replace: true });
       })
@@ -86,7 +93,7 @@ const Login = () => {
               </button>
             </div>
             <div className="form-control mt-2">
-              <button onClick={handlerGoogleLogin} type="button" className="btn google-btn space-x-2">
+              <button onClick={handlerGithubLogin} type="button" className="btn google-btn space-x-2">
                 <FaGithub className="w-7 h-5" />
                 <span>Continue with Github</span>
               </button>

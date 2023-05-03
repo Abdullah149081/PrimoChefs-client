@@ -1,10 +1,21 @@
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
 import { createContext, useEffect, useMemo, useState } from "react";
 import app from "../firebase/firebase.config";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
 const googleAuthProvider = new GoogleAuthProvider();
+const githubAuthProvider = new GithubAuthProvider();
 
 const AuthProviders = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -33,8 +44,12 @@ const AuthProviders = ({ children }) => {
     return signInWithPopup(auth, googleAuthProvider);
   };
 
+  const githubSing = () => {
+    return signInWithPopup(auth, githubAuthProvider);
+  };
+
   const updateUserData = (newUser, name, photo) => {
-    return updateProfile(newUser, {
+    updateProfile(newUser, {
       displayName: name,
       photoURL: photo,
     });
@@ -49,7 +64,7 @@ const AuthProviders = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  const authInfo = useMemo(() => ({ user, createUser, signIn, logOut, googleSign, loading, updateUserData }), [loading, user]);
+  const authInfo = useMemo(() => ({ user, createUser, signIn, logOut, googleSign, loading, updateUserData, githubSing }), [loading, user]);
 
   return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;
 };

@@ -59,7 +59,6 @@ const Header = () => {
             <ActiveLink to="/">Home</ActiveLink>
             <ActiveLink to="/blog">Blog</ActiveLink>
             {!user && <ActiveLink to="/sign-in">Sign in</ActiveLink>}
-            {!user && <ActiveLink to="/sign-up">Sign up</ActiveLink>}
             {user && (
               <button onClick={handlerLogOut} type="button" className="btn  mx-auto w-2/4 block  lg:hidden ">
                 <span className="inline-flex gap-2 ">

@@ -17,6 +17,7 @@
 .btn {
   @apply py-5 px-7 font-semibold border-0 text-white bg-amber-500 hover:bg-emerald-900 hover:duration-150 hover:transition rounded-lg;
 }
+
 .fa {
   @apply p-3 rounded-full;
 }
@@ -39,4 +40,13 @@
   color: #fff;
   padding: 0.5rem 3rem;
   clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+.LazyLoad {
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.is-visible {
+  opacity: 1;
 }
