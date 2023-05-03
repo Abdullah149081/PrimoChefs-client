@@ -44,7 +44,7 @@ const Login = () => {
       <div className="hero-content  flex-col w-full  lg:w-5/6 ">
         <div className=" bg-gradient-to-r from-lime-500  to-green-700 card rounded-md border flex-shrink-0 w-full max-w-sm shadow-2xl ">
           <div className="text-center mt-7 ">
-            <h1 className="text-2xl  lg:text-4xl font-bold">Login</h1>
+            <h1 className="text-2xl  lg:text-4xl font-bold">Sign in</h1>
           </div>
           <form onSubmit={handlerLogin} className="card-body relative z-10">
             <div className="form-control">

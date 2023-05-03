@@ -12,7 +12,7 @@ const AuthProviders = ({ children }) => {
 
   // sign-up user
   const createUser = (email, password) => {
-    setLoading(true);
+    // setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
@@ -24,12 +24,12 @@ const AuthProviders = ({ children }) => {
 
   // logOut user
   const logOut = () => {
-    setLoading(true);
+    // setLoading(true);
     return signOut(auth);
   };
 
   const googleSign = () => {
-    setLoading(true);
+    // setLoading(true);
     return signInWithPopup(auth, googleAuthProvider);
   };
 

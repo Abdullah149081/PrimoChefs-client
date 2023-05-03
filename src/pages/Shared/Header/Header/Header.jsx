@@ -45,8 +45,8 @@ const Header = () => {
           >
             <ActiveLink to="/">Home</ActiveLink>
             <ActiveLink to="/blog">Blog</ActiveLink>
-            {!user && <ActiveLink to="/login">Sign in</ActiveLink>}
-            {!user && <ActiveLink to="/register">Sign up</ActiveLink>}
+            {!user && <ActiveLink to="/sign-in">Sign in</ActiveLink>}
+            {!user && <ActiveLink to="/sign-up">Sign up</ActiveLink>}
             <button type="button" className="btn  mx-auto w-2/4 block  lg:hidden ">
               login
             </button>
