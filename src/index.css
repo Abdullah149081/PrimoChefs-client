@@ -20,6 +20,9 @@
 .fa {
   @apply p-3 rounded-full;
 }
+.google-btn {
+  @apply bg-white text-black  rounded-full;
+}
 .text-g {
   @apply bg-gradient-to-r from-green-700 via-yellow-500 to-black text-transparent  bg-clip-text;
 }
