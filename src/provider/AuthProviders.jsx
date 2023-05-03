@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import React, { createContext, useMemo, useState } from "react";
 import app from "../firebase/firebase.config";
 
@@ -18,7 +18,12 @@ const AuthProviders = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const authInfo = useMemo(() => ({ user, createUser, signIn }), [user]);
+  // logOut use
+  const logOut = () => {
+    return signOut(auth);
+  };
+
+  const authInfo = useMemo(() => ({ user, createUser, signIn, logOut }), [user]);
 
   return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;
 };
