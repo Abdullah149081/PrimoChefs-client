@@ -26,9 +26,7 @@ const ViewRecipes = () => {
           </p>
         </div>
       </div>
-      <h2 className="chef-title mt-20">
-        Most <span>Popular Recipe</span>
-      </h2>
+      <h2 className="chef-title mt-20">Most Popular Recipe</h2>
       <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-4">
         {recipes.map((recipe, idx) => (
           <Recipes key={idx} recipe={recipe} />

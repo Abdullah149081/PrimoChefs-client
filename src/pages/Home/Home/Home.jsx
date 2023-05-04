@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import banner1 from "../../../assets/banner-1.jpg";
 import chef from "../../../assets/chef.json";
 import ChefSection from "../ChefSection/ChefSection";
+import RecentBlog from "../RecentBlog/RecentBlog";
 
 const Home = () => {
   const chefsData = useLoaderData();
@@ -38,6 +39,14 @@ const Home = () => {
         {chefsData?.map((chefs) => (
           <ChefSection key={chefs.id} chefs={chefs} />
         ))}
+      </div>
+
+      {/* recent blog  */}
+      <h2 className="chef-title my-24 lg:my-32">
+        Recent <span>Blog</span>
+      </h2>
+      <div >
+        <RecentBlog />
       </div>
     </div>
   );
