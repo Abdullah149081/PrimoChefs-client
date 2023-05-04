@@ -39,15 +39,18 @@ const AuthProviders = ({ children }) => {
     return signOut(auth);
   };
 
+  // google sing
   const googleSign = () => {
     // setLoading(true);
     return signInWithPopup(auth, googleAuthProvider);
   };
 
+  // github sign
   const githubSing = () => {
     return signInWithPopup(auth, githubAuthProvider);
   };
 
+  //  update Profile user
   const updateUserData = (newUser, name, photo) => {
     updateProfile(newUser, {
       displayName: name,
