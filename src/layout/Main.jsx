@@ -18,7 +18,7 @@ const Main = () => {
     <div>
       <Header />
       <Toaster />
-      <div className="min-h-[calc(100vh-75px)]">
+      <div className="min-h-[calc(100vh-610px)]">
         <Outlet />
       </div>
       <Footer />

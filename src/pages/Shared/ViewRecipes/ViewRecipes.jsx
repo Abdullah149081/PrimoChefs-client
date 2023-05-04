@@ -9,8 +9,8 @@ const ViewRecipes = () => {
   return (
     <div className="px-4 py-16 md:px-24 lg:px-32 lg:py-20 ">
       <div className="card lg:card-side bg-base-100 shadow-xl">
-        <figure className="border lg:marker:w-2/4">
-          <img src={chef_picture} alt="Album" />
+        <figure className="border lg:w-2/4">
+          <img className=" object-cover" src={chef_picture} alt="Album" />
         </figure>
         <div className="card-body space-y-2 mt-4 lg:w-2/5">
           <h2 className="card-title text-zinc-600 ">{chef_name}</h2>

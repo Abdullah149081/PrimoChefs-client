@@ -9,7 +9,7 @@ const ChefSection = ({ chefs }) => {
     <div>
       <div className="card w-full  bg-base-100 rounded-lg border">
         <LazyLoad threshold={0.95}>
-          <img src={chef_picture} alt="chef_picture" className="rounded-xl " />
+          <img src={chef_picture} alt="chef_picture" className="rounded w-full h-60 lg:h-96 object-cover " />
         </LazyLoad>
         <div className="card-body space-y-4 ">
           <h2 className="card-title text-[#757575]">{chef_name}</h2>

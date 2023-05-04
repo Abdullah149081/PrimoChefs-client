@@ -55,7 +55,7 @@ const Register = () => {
   };
 
   return (
-    <div className="hero  mt-3 ">
+    <div className="hero  mt-3 mb-24 ">
       <div className="hero-content  flex-col w-full  lg:w-5/6 ">
         <div className=" bg-gradient-to-r from-lime-500  to-green-700 card rounded-md border flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="text-center mt-7 ">

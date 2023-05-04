@@ -47,7 +47,7 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
   return (
-    <div className="hero mt-20  ">
+    <div className="hero mt-20 mb-24 ">
       <div className="hero-content  flex-col w-full  lg:w-5/6 ">
         <div className=" bg-gradient-to-r from-lime-500  to-green-700 card rounded-md border flex-shrink-0 w-full max-w-sm shadow-2xl ">
           <div className="text-center mt-7 ">
