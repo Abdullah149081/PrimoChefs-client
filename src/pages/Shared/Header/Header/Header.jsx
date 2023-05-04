@@ -27,13 +27,7 @@ const Header = () => {
             </h2>
           </Link>
         </div>
-        <div className="md:hidden ml-auto">
-          {user && (
-            <p title={user?.displayName}>
-              <img className="w-10 h-10 rounded-full ring-offset-2 ring-2 ring-emerald-800" src={user?.photoURL} alt="" />
-            </p>
-          )}
-        </div>
+
         <div>
           <div
             onClick={() => {
@@ -56,9 +50,17 @@ const Header = () => {
               open ? "top-22 left-0  w-full text-center py-12   shadow-lg pl-12 pr-6 space-y-6   absolute z-10 bg-white" : "hidden"
             }`}
           >
+            <div className="md:hidden mx-auto text-center">
+              {user && (
+                <p title={user?.displayName}>
+                  <img className="w-10 h-10 rounded-full ring-offset-2 ring-2 ring-emerald-800" src={user?.photoURL} alt="" />
+                </p>
+              )}
+            </div>
             <ActiveLink to="/">Home</ActiveLink>
             <ActiveLink to="/blog">Blog</ActiveLink>
             {!user && <ActiveLink to="/sign-in">Sign in</ActiveLink>}
+
             {user && (
               <button onClick={handlerLogOut} type="button" className="btn  mx-auto w-2/4 block  lg:hidden ">
                 <span className="inline-flex gap-2 ">
