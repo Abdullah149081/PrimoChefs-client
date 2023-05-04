@@ -50,3 +50,8 @@
 .is-visible {
   opacity: 1;
 }
+
+.chef-footer :hover {
+  font-weight: 500;
+  color: #f59e0b;
+}
