@@ -24,6 +24,9 @@
 .google-btn {
   @apply bg-white text-black  rounded-full;
 }
+.subscribe-btn {
+  @apply rounded-none border-0;
+}
 .text-g {
   @apply bg-gradient-to-r from-green-700 via-yellow-500 to-black text-transparent  bg-clip-text;
 }

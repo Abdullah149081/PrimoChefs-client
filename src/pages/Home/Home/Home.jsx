@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import banner1 from "../../../assets/banner-1.jpg";
 import chef from "../../../assets/chef.json";
 import ChefSection from "../ChefSection/ChefSection";
+import PrimoChefsSub from "../PrimoChefsSub/PrimoChefsSub";
 import RecentBlog from "../RecentBlog/RecentBlog";
 
 const Home = () => {
@@ -45,8 +46,13 @@ const Home = () => {
       <h2 className="chef-title my-24 lg:my-32">
         Recent <span>Blog</span>
       </h2>
-      <div >
+      <div>
         <RecentBlog />
+      </div>
+
+      {/* subscribe  */}
+      <div className="my-24 lg:my-32 ">
+        <PrimoChefsSub />
       </div>
     </div>
   );

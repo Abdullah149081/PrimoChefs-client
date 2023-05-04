@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
         <hr className="mt-10 w-4/5 border mx-auto " />
         <div className="mt-11">
-          <p className="text-center text-gray-50">&copy; 2023 by PrimoChefs.com</p>
+          <p className="text-center text-gray-50">&copy; 2023 by primochefs.web.app</p>
         </div>
       </div>
     </div>
