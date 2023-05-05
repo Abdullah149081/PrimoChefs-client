@@ -37,11 +37,7 @@ const Header = () => {
             tabIndex="0"
           >
             <span className="pr-12 md:pr-0 ">
-              {open ? (
-                <TiTimesOutline className="h-6 w-7 mt-7 ml-4  md:hidden text-gray-900 cursor-pointer" />
-              ) : (
-                <FaAlignRight className=" ml-4 h-5 w-5 mt-7 md:hidden text-gray-900  cursor-pointer" />
-              )}
+              {open ? <TiTimesOutline className="h-6 w-7 mt-7   md:hidden text-gray-900 cursor-pointer" /> : <FaAlignRight className="  h-5 w-5 mt-7 md:hidden text-gray-900  cursor-pointer" />}
             </span>
           </div>
 
