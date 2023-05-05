@@ -10,13 +10,12 @@ import RecentBlog from "../RecentBlog/RecentBlog";
 
 const Home = () => {
   const chefsData = useLoaderData();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
+    if (chefsData) {
       setLoading(false);
-    }, 1000);
-  }, []);
+    }
+  }, [chefsData]);
 
   return (
     <div className="px-4 py-16 md:px-24 lg:px-32 lg:py-20 ">
@@ -38,13 +37,13 @@ const Home = () => {
           </div>
         </div>
       </div>
-
       {/* chef  */}
       <h2 className="chef-title relative z-10">
         Our <span>Master Chef</span>
       </h2>
+
       {loading ? (
-        <div className="flex justify-center mt-12 items-center">
+        <div className="flex justify-center mt-4 items-center">
           <progress className="progress w-56 " />;
         </div>
       ) : (
@@ -54,7 +53,6 @@ const Home = () => {
           ))}
         </div>
       )}
-
       {/* recent blog  */}
       <h2 className="chef-title my-24 lg:my-32">
         Recent <span>Blog</span>
@@ -62,7 +60,6 @@ const Home = () => {
       <div>
         <RecentBlog />
       </div>
-
       {/* subscribe  */}
       <div className="my-24 lg:my-32 ">
         <PrimoChefsSub />

@@ -5,18 +5,17 @@ import Recipes from "./Recipes";
 
 const ViewRecipes = () => {
   const viewRecipes = useLoaderData();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
+    if (viewRecipes) {
       setLoading(false);
-    }, 1000);
-  }, []);
+    }
+  }, [viewRecipes]);
   const { chef_picture, chef_name, bio, likes, num_of_recipes, years_of_experience, recipes } = viewRecipes;
   return (
     <div>
       {loading ? (
-        <div className="flex justify-center mt-12 items-center">
+        <div className="flex justify-center  items-center">
           <progress className="progress w-56 " />;
         </div>
       ) : (
