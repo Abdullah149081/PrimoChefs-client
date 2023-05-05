@@ -1,4 +1,5 @@
 import Lottie from "lottie-react";
+import { useEffect, useState } from "react";
 import { BiPhoneCall } from "react-icons/bi";
 import { useLoaderData } from "react-router-dom";
 import banner1 from "../../../assets/banner-1.jpg";
@@ -9,7 +10,13 @@ import RecentBlog from "../RecentBlog/RecentBlog";
 
 const Home = () => {
   const chefsData = useLoaderData();
-  // console.log(chefData);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
 
   return (
     <div className="px-4 py-16 md:px-24 lg:px-32 lg:py-20 ">
@@ -36,11 +43,17 @@ const Home = () => {
       <h2 className="chef-title relative z-10">
         Our <span>Master Chef</span>
       </h2>
-      <div className="grid grid-cols-1 lg:grid-cols-3 mt-12 gap-4">
-        {chefsData?.map((chefs) => (
-          <ChefSection key={chefs.id} chefs={chefs} />
-        ))}
-      </div>
+      {loading ? (
+        <div className="flex justify-center mt-12 items-center">
+          <progress className="progress w-56 " />;
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 lg:grid-cols-3 mt-12 gap-4">
+          {chefsData?.map((chefs) => (
+            <ChefSection key={chefs.id} chefs={chefs} />
+          ))}
+        </div>
+      )}
 
       {/* recent blog  */}
       <h2 className="chef-title my-24 lg:my-32">
