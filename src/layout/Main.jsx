@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Toaster } from "react-hot-toast";
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import Footer from "../pages/Shared/Footer/Footer";
 import Header from "../pages/Shared/Header/Header/Header";
 import { AuthContext } from "../provider/AuthProviders";
@@ -20,6 +20,7 @@ const Main = () => {
       <Toaster />
       <div className="min-h-[calc(100vh-530px)]">
         <Outlet />
+        <ScrollRestoration />
       </div>
       <Footer />
     </div>
